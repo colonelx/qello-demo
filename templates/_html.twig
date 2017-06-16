@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<title>{{ block('title') }} - QKids Demo</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<body>
+    <header>
+        {% if is_logged == true %}
+        <ul class="nav">
+            <li><a href="#">Assets</a></li>
+            <li><a href="#">Favorites</a></li>
+        </ul>
+        {% endif %}
+        <div class="clearfix"></div>
+    </header>
+
+    <div class="main">
+        <h1>{{ block('title') }}</h1>
+        {{ block('main') }}
+    </div>
+
+    <footer>
+        &copy; 2017 Viktor Panteleev for Qello Media Solutions
+    </footer>
+</body>
+</html>

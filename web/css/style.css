@@ -1,0 +1,33 @@
+html, body {
+    font-family: Arial, Verdana, Tahoma;
+}
+header {
+    margin-bottom: 50px;
+}
+footer {
+    margin-top: 50px;
+}
+header .nav {
+    list-style:none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+header .nav li {
+    float: left;
+}
+header .nav li a {
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid;
+    border-left:none;
+}
+header .nav li:first-child a{
+    border-left: 1px solid;
+}
+.clearfix {
+    clear: both;
+}
+.text-right {
+    text-align: right;
+}

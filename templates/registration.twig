@@ -1,0 +1,24 @@
+{% extends "_html.twig" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Email</th><td><input type="text" name="email" value=""/></td>
+        </tr>
+        <tr>
+            <th>Password</th><td><input type="password" name="password" value=""/></td>
+        </tr>
+        <tr>
+            <th>First name</th><td><input type="text" name="first_name" value=""/></td>
+        </tr>
+        <tr>
+            <th>Last name</th><td><input type="text" name="last_name" value=""/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="text-right"><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+{% endblock %}
