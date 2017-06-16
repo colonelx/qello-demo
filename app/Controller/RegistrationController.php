@@ -9,7 +9,6 @@ class RegistrationController extends BaseController
 {
     public function index(Request $request, Response $response)
     {
-        phpinfo();
         return $this->renderView($response, 'registration.twig');
     }
 }

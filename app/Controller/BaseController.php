@@ -4,7 +4,7 @@ namespace QKidsDemo\Controller;
 
 use Interop\Container\ContainerInterface;
 
-class BaseController
+abstract class BaseController
 {
     protected $container;
 
