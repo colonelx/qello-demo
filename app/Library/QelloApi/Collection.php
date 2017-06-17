@@ -15,7 +15,7 @@ class Collection extends AbstractApi
         return $this->post('collections/assets',
             $params,
             ['token' => $this->apiInstance->getToken()]
-        )->getResponse();
+        );
     }
 
     public function removeFromFavorites($assetId)
@@ -26,7 +26,7 @@ class Collection extends AbstractApi
             'token' => $this->apiInstance->getToken()
         ];
 
-        return $this->delete('collections/assets', $params)->getResponse();
+        return $this->delete('collections/assets', $params);
     }
 
 

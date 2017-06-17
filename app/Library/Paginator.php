@@ -11,20 +11,20 @@ class Paginator
 
     public function __construct($currentPage, $totalResources, $perPage, $currentPageOffset = 5 )
     {
-        $this->currentPage = $currentPage;
-        $this->totalResources = $totalResources;
-        $this->perPage = $perPage;
-        $this->currentPageOffset = $currentPageOffset;
+        $this->currentPage = (int)$currentPage;
+        $this->totalResources = (int)$totalResources;
+        $this->perPage = (int)$perPage;
+        $this->currentPageOffset = (int)$currentPageOffset;
     }
 
     public function getRequestOffset()
     {
-        return ($this->currentPage-1) * $this->perPage;
+        return (int)($this->currentPage-1) * $this->perPage;
     }
 
     public function getMaxPages()
     {
-        return ceil($this->totalResources / $this->perPage );
+        return (int) ceil($this->totalResources / $this->perPage );
     }
 
     /**

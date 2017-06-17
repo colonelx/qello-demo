@@ -16,19 +16,19 @@ abstract class AbstractApi
 
     public function get($path, $parameters = [])
     {
-        $url = $this->apiInstance->getApiEndpoint() . '/' . $path;
-        return $this->apiInstance->getHttpClient()->get($url, $parameters);
+        $url = $this->apiInstance->getApiEndpoint($path);
+        return $this->apiInstance->getHttpClient()->get($url, $parameters)->getResponse();
     }
 
     public function post($path, $parameters = [], $getParameters = [])
     {
-        $url = $this->apiInstance->getApiEndpoint() . '/' . $path;
-        return $this->apiInstance->getHttpClient()->post($url, $parameters, $getParameters);
+        $url = $this->apiInstance->getApiEndpoint($path);
+        return $this->apiInstance->getHttpClient()->post($url, $parameters, $getParameters)->getResponse();
     }
 
     public function delete($path, $parameters = [])
     {
-        $url = $this->apiInstance->getApiEndpoint() . '/' . $path;
-        return $this->apiInstance->getHttpClient()->delete($url, $parameters);
+        $url = $this->apiInstance->getApiEndpoint($path);
+        return $this->apiInstance->getHttpClient()->delete($url, $parameters)->getResponse();
     }
 }

@@ -8,3 +8,9 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+modules:
+  config:
+    \Herloct\Codeception\Module\Slim:
+      container: container.php
+    REST:
+      depends: \Herloct\Codeception\Module\Slim

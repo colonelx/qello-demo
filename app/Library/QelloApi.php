@@ -18,7 +18,10 @@ class QelloApi
 
     public function __construct($apiEndpoint, $token = null, Device $device = null, $appVersion = null)
     {
-        $this->apiEndpoint = $apiEndpoint;
+        $url = parse_url($apiEndpoint);
+        $safeUrl = $url['scheme']."://".$url['host'];
+
+        $this->apiEndpoint = $safeUrl;
         $this->deviceId = ($device)? $device->getId() : '';
         $this->deviceName = ($device)? $device->getName() : '';
         $this->appVersion = ($appVersion)? $appVersion : '1.0.0';
@@ -67,9 +70,10 @@ class QelloApi
         ];
     }
 
-    public function getApiEndpoint()
+    public function getApiEndpoint($path)
     {
-        return $this->apiEndpoint;
+
+        return $this->apiEndpoint . '/' . $path;
     }
 
     public function getToken()

@@ -58,6 +58,6 @@ class RequestBuilder
 
         curl_close($this->curlInstance);
 
-        return $output;
+        return new ResponseHandler($output);
     }
 }

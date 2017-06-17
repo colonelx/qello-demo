@@ -40,10 +40,10 @@ class Content extends AbstractApi
 
     public function getAssetsCount($offset = 0, $limit = 0)
     {
-        return $this->assetsCall(0, 0)->data->total;
+            return $this->assetsCall(0, 0)->data->total;
     }
 
-    private function assetsCall($offset = 0, $limit = 0, $favoritesOnly = false)
+    public function assetsCall($offset = 0, $limit = 0, $favoritesOnly = false)
     {
         $params = [
             'classification' => $this->classification,
@@ -57,7 +57,7 @@ class Content extends AbstractApi
             $params['collection_type'] = 'Favorites';
         }
 
-        return $this->get('content', $params)->getResponse();
+        return $this->get('content', $params);
     }
 
     private function isAssetInFavorites($asset)

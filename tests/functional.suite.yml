@@ -7,9 +7,6 @@
 
 actor: FunctionalTester
 modules:
-  enabled:
-    - \Helper\Functional
-    - \Herloct\Codeception\Module\Slim:
-        container: container.php
-    - REST:
-        depends: \Herloct\Codeception\Module\Slim
+    enabled:
+        # add a framework module here
+        - \Helper\Functional

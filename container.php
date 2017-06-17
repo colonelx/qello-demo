@@ -1,7 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
-use Slim\Container;
+use \Slim\Container;
 
 $dotEnv = new \Dotenv\Dotenv(realpath(__DIR__));
 $dotEnv->load();
