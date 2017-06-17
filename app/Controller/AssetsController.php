@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: viktor
- * Date: 6/17/17
- * Time: 9:32 AM
- */
 
 namespace QKidsDemo\Controller;
 

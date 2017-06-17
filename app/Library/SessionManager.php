@@ -1,6 +1,6 @@
 <?php
 
-namespace QKidsDemo\Service;
+namespace QKidsDemo\Library;
 
 /**
  * Class SessionManager

@@ -2,7 +2,6 @@
 
 namespace QKidsDemo\Controller;
 
-
 use Slim\Http\Request;
 use Slim\Http\Response;
 

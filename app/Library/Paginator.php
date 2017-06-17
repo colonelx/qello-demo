@@ -2,7 +2,6 @@
 
 namespace QKidsDemo\Library;
 
-
 class Paginator
 {
     protected $currentPage;

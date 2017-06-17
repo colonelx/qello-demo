@@ -2,7 +2,6 @@
 
 namespace QKidsDemo\Model;
 
-
 class User
 {
     protected $id;

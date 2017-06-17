@@ -2,7 +2,7 @@
 
 namespace QKidsDemo\Middleware;
 
-use QKidsDemo\Service\SessionManager;
+use QKidsDemo\Library\SessionManager;
 use Slim\Http\Request;
 use Slim\Http\Response;
 

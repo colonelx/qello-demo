@@ -4,7 +4,7 @@
 $container = $app->getContainer();
 
 $container['session_manager'] = function ($container) {
-    return new \QKidsDemo\Service\SessionManager();
+    return new \QKidsDemo\Library\SessionManager();
 };
 
 $container['view'] = function ($container) {

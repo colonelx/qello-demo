@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: viktor
- * Date: 6/16/17
- * Time: 3:12 AM
- */
 
 namespace QKidsDemo\Exception;
 

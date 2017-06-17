@@ -5,7 +5,6 @@ namespace QKidsDemo\Controller;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use QKidsDemo\Exception\QelloApiErrorException;
-use QKidsDemo\Library\QelloApi;
 use QKidsDemo\Validation\UserRegistrationValidator;
 
 class RegistrationController extends BaseController

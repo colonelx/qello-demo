@@ -8,7 +8,6 @@
 
 namespace QKidsDemo\Exception;
 
-
 class QelloApiErrorException  extends QelloApiException
 {
     public function __construct($message = "", $code = 0)
