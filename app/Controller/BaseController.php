@@ -19,7 +19,7 @@ abstract class BaseController
 
     protected function renderView($resposne, $view, $data = null)
     {
-        $isLogged = !empty($this->container->get('session_manager')->get('token'));
+        $isLogged = !empty($this->container->session_manager->get('token'));
 
         if (is_array($data)) {
             $viewData = array_merge($data, ['is_logged' => $isLogged]);
@@ -33,8 +33,8 @@ abstract class BaseController
     protected function initApi()
     {
         $this->api = new QelloApi(
-            $this->container->get('qkids_api_uri'),
-            $this->container->get('session_manager')->get('token'),
+            $this->container->config['qkids_api_uri'],
+            $this->container->session_manager->get('token'),
             new Device(),
             '1.0.0'
         );

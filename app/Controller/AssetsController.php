@@ -17,7 +17,7 @@ class AssetsController extends BaseController
 
         $total = $this->api->content(self::CLASSIFICATION_EPISODE, self::TYPE_VIDEO)->getAssetsCount();
 
-        $perPage = $this->container->get('assets_per_page');
+        $perPage = $this->container->config['assets_per_page'];
 
         $paginator = new Paginator($page, $total, $perPage);
 

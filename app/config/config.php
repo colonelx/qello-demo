@@ -6,3 +6,5 @@ $config = [
 
     'base_path' => realpath(__DIR__ . '/../../')
 ];
+
+return $config;

@@ -1,8 +1,4 @@
 <?php
 
-require '../app/bootstrap.php';
-require '../app/container.php';
-require '../app/router.php';
-
-/** @noinspection PhpUndefinedVariableInspection */
-$app->run();
+$container = require __DIR__.'/../container.php';
+$container->app->run();
