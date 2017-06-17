@@ -25,7 +25,9 @@ $app->group('/app', function() use ($app) {
     /** @noinspection PhpUndefinedVariableInspection */
     $app->get('/favorites/add/{id}', \QKidsDemo\Controller\FavoritesController::class . ":add")
         ->setName('favorites_add');
+
     $app->get('/favorites/remove/{id}', \QKidsDemo\Controller\FavoritesController::class . ":remove")
         ->setName('favorites_delete');
+
 })->add(new \QKidsDemo\Middleware\TokenMiddleware($container->get('session_manager')))
     ->add(new \QKidsDemo\Middleware\SessionMiddleware());
