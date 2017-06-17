@@ -2,9 +2,9 @@
 
 namespace QKidsDemo\Middleware;
 
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
 use QKidsDemo\Service\SessionManager;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 class TokenMiddleware
 {

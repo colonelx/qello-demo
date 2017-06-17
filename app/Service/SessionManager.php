@@ -17,6 +17,6 @@ class SessionManager
 
     public function get($name)
     {
-        return $_SESSION[$name];
+        return (isset($_SESSION) && isset($_SESSION[$name]))? $_SESSION[$name] : null;
     }
 }

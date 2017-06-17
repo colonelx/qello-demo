@@ -7,3 +7,4 @@
 ## Instalation
 
 - `composer update`
+- `curl`

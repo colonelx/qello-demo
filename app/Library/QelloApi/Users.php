@@ -1,15 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: viktor
- * Date: 6/16/17
- * Time: 7:15 AM
- */
 
 namespace QKidsDemo\Library\QelloApi;
 
-
-class Users
+class Users extends AbstractApi
 {
+    public function getToken($email, $password, $firstName, $lastName)
+    {
+        $params = [
+            'email' => $email,
+            'password' => $password,
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'device_data' => $this->apiInstance->getDeviceData()
+        ];
 
+        $response = $this->post('users', $params)->getResponse();
+        return $response->data->token;
+    }
 }

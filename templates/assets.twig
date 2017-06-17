@@ -1,0 +1,50 @@
+{% extends "_html.twig" %}
+
+{% block title %}Assets{% endblock %}
+
+{% block main %}
+    <div class="assets">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Thumbnail</th>
+                <th>Name</th>
+                <th>Favorites</th>
+            </tr>
+            {% for asset in assets %}
+            <tr>
+                <td>{{ asset.id }}</td>
+                <td>
+                    {% if(asset.thumbnail) %}
+                    <img src="{{ asset.thumbnail }}" width="200px" />
+                    {% endif %}
+                </td>
+                <td>{{ asset.name }}</td>
+                <td>
+                    {% if asset.isInFavorites() %}
+                        <a href="/app/favorites/remove/{{ asset.id }}">Remove from Favorites</a>
+                    {% else %}
+                        <a href="/app/favorites/add/{{ asset.id }}">Add to Favorites</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    {% if links|length > 1 %}
+    <div class="pagination">
+        <ul class="pages">
+            {% for link in links %}
+            <li>
+                {% if link['active'] %}
+                    <span class="current">{{ link['name'] }}</span>
+                {% else %}
+                    <a href="/app/assets/{{ link['link_suffix'] }}">{{ link['name'] }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+{% endblock %}
