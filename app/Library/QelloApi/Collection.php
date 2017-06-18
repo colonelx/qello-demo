@@ -2,9 +2,17 @@
 
 namespace QKidsDemo\Library\QelloApi;
 
-
+/**
+ * Class Collection. Collection related API calls
+ * @package QKidsDemo\Library\QelloApi
+ */
 class Collection extends AbstractApi
 {
+    /**
+     * API add to favorites call
+     * @param $assetId
+     * @return Object
+     */
     public function addToFavorites($assetId)
     {
         $params = [
@@ -18,6 +26,11 @@ class Collection extends AbstractApi
         );
     }
 
+    /**
+     * API remove from favorites call
+     * @param $assetId
+     * @return Object
+     */
     public function removeFromFavorites($assetId)
     {
         $params = [

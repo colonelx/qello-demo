@@ -7,13 +7,29 @@ use Slim\Http\Response;
 use QKidsDemo\Exception\QelloApiErrorException;
 use QKidsDemo\Validation\UserRegistrationValidator;
 
+/**
+ * Class RegistrationController
+ * @package QKidsDemo\Controller
+ */
 class RegistrationController extends BaseController
 {
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @method GET
+     */
     public function index(Request $request, Response $response)
     {
         return $this->renderView($response, 'registration.twig');
     }
 
+    /**
+     * Handles registration and redirects to home
+     * @param Request $request
+     * @param Response $response
+     * @return void|static
+     * @method POST
+     */
     public function send(Request $request, Response $response)
     {
         $validator = new UserRegistrationValidator();

@@ -2,6 +2,10 @@
 
 namespace QKidsDemo\Library\HttpClient;
 
+/**
+ * Class RequestBuilder. Uses cURL to make HTTP requests
+ * @package QKidsDemo\Library\HttpClient
+ */
 class RequestBuilder
 {
     protected $method;
@@ -11,6 +15,13 @@ class RequestBuilder
     protected $getParameters;
     protected $curlInstance;
 
+    /**
+     * RequestBuilder constructor.
+     * @param $method Valid methods are GET, POST, DELETE
+     * @param $url
+     * @param array $getParameters GET parameters
+     * @param array $bodyParameters POST parameters
+     */
     public function __construct($method, $url, $getParameters = [], $bodyParameters = [])
     {
         $this->method = $method;
@@ -20,11 +31,20 @@ class RequestBuilder
         $this->getParameters = $getParameters;
     }
 
+    /**
+     * Adding custom headers
+     * @param $name
+     * @param $value
+     */
     public function addHeader($name, $value)
     {
         $this->headers[] = "{$name}: {$value}";
     }
 
+    /**
+     * Handles the HTTP call
+     * @return ResponseHandler
+     */
     public function getResponse()
     {
         $this->curlInstance = curl_init();

@@ -2,11 +2,16 @@
 
 namespace QKidsDemo\Exception;
 
-    class QelloApiException extends \Exception
+/**
+ * Class QelloApiException
+ * Thrown when an unknown HTTP error occurs with an API request
+ * @package QKidsDemo\Exception
+ */
+class QelloApiException extends \Exception
+{
+    public function __construct($message = "", $code = 0)
     {
-        public function __construct($message = "", $code = 0)
-        {
-            parent::__construct($message, $code);
-        }
+        parent::__construct($message, $code);
+    }
 
 }

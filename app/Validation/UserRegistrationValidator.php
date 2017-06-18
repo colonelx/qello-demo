@@ -5,18 +5,28 @@ namespace QKidsDemo\Validation;
 use Respect\Validation\Exceptions\NestedValidationException;
 use \Respect\Validation\Validator as V;
 
+/**
+ * Class UserRegistrationValidator
+ * @package QKidsDemo\Validation
+ */
 class UserRegistrationValidator
 {
     protected $rules = [];
     protected $messages = [];
     protected $errors = [];
 
+    /**
+     * UserRegistrationValidator constructor.
+     */
     public function __construct()
     {
         $this->initRules();
         $this->initMessages();
     }
 
+    /**
+     * Defines the rules for each input
+     */
     public function initRules()
     {
         $this->rules['email'] = V::email();
@@ -25,6 +35,9 @@ class UserRegistrationValidator
         $this->rules['last_name'] = V::alpha()->noWhitespace()->length(4, 20)->setName('Last name');
     }
 
+    /**
+     * Defines the error messages
+     */
     public function initMessages()
     {
         $this->messages = [
@@ -36,6 +49,11 @@ class UserRegistrationValidator
         ];
     }
 
+    /**
+     * Goes through the fields to check against the defined rules
+     * @param array $inputs
+     * @return bool
+     */
     public function assert(array $inputs)
     {
         foreach ($this->rules as $rule => $validator) {
@@ -50,11 +68,19 @@ class UserRegistrationValidator
        return true;
     }
 
+    /**
+     * Add custom errors. Used to define API errors.
+     * @param $error
+     */
     public function addApiError($error)
     {
         $this->errors['api'] = $error;
     }
 
+    /**
+     * Fetch all the found errors
+     * @return array
+     */
     public function errors()
     {
         $errors = [];

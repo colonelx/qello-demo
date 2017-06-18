@@ -8,7 +8,11 @@
 
 namespace QKidsDemo\Exception;
 
-
+/**
+ * Class QelloApiResponsePathMissingException
+ * Thrown when we are looking for an non existing element in the API response
+ * @package QKidsDemo\Exception
+ */
 class QelloApiResponsePathMissingException extends QelloApiException
 {
     public function __construct($path = "", $call = "", $code = 0)

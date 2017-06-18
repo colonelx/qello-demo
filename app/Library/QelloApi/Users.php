@@ -5,9 +5,22 @@ namespace QKidsDemo\Library\QelloApi;
 use QKidsDemo\Exception\QelloApiResponsePathMissingException;
 use QKidsDemo\Exception\QelloApiException;
 
+/**
+ * Class Users. User related API calls
+ * @package QKidsDemo\Library\QelloApi
+ */
 class Users extends AbstractApi
 {
-        public function getToken($email, $password, $firstName, $lastName)
+    /**
+     * Makes user registration API call
+     * @param $email
+     * @param $password
+     * @param $firstName
+     * @param $lastName
+     * @return string
+     * @throws QelloApiResponsePathMissingException
+     */
+    public function getToken($email, $password, $firstName, $lastName)
     {
         $params = [
             'email' => $email,

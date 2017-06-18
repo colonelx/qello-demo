@@ -2,6 +2,10 @@
 
 namespace QKidsDemo\Library;
 
+/**
+ * Class Paginator - Library to create page links
+ * @package QKidsDemo\Library
+ */
 class Paginator
 {
     protected $currentPage;
@@ -9,6 +13,13 @@ class Paginator
     protected $perPage;
     protected $currentPageOffset;
 
+    /**
+     * Paginator constructor.
+     * @param $currentPage
+     * @param $totalResources
+     * @param $perPage
+     * @param int $currentPageOffset
+     */
     public function __construct($currentPage, $totalResources, $perPage, $currentPageOffset = 5 )
     {
         $this->currentPage = (int)$currentPage;
@@ -17,18 +28,29 @@ class Paginator
         $this->currentPageOffset = (int)$currentPageOffset;
     }
 
+    /**
+     * Calculates the request offset used in the API call
+     * @return int
+     *
+     */
     public function getRequestOffset()
     {
         return (int)($this->currentPage-1) * $this->perPage;
     }
 
+    /**
+     * Calculates the maximum amount of pages
+     * @return int
+     */
     public function getMaxPages()
     {
         return (int) ceil($this->totalResources / $this->perPage );
     }
 
     /**
+     * Handles the creation of an array to be used in the views
      * This could be written way better, but for the sake of this demo I will just use arrays.
+     * @return array
      */
     public function getPaginationLinks()
     {

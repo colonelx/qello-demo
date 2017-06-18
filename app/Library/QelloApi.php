@@ -7,6 +7,11 @@ use QKidsDemo\Library\HttpClient\HttpClient;
 use QKidsDemo\Library\QelloApi as Api;
 use QKidsDemo\Model\Device;
 
+/**
+ * Class QelloApi
+ * Client class
+ * @package QKidsDemo\Library
+ */
 class QelloApi
 {
     protected $deviceName;
@@ -16,6 +21,13 @@ class QelloApi
     protected $httpClient;
     protected $token;
 
+    /**
+     * QelloApi constructor.
+     * @param $apiEndpoint
+     * @param null $token
+     * @param Device|null $device
+     * @param null $appVersion
+     */
     public function __construct($apiEndpoint, $token = null, Device $device = null, $appVersion = null)
     {
         $url = parse_url($apiEndpoint);
@@ -29,6 +41,13 @@ class QelloApi
         $this->httpClient = new HttpClient();
     }
 
+    /**
+     * Creates an API call instance for the given API endpoint
+     * @param $action
+     * @param array $args
+     * @return Api\Collection|Api\Content|Api\Users
+     * @throws InvalidArgumentException
+     */
     public function instance($action, $args = [])
     {
         switch ($action) {
@@ -47,6 +66,11 @@ class QelloApi
         return $api;
     }
 
+    /**
+     * @param $name
+     * @param $args
+     * @return Api\Collection|Api\Content|Api\Users
+     */
     public function __call($name, $args)
     {
         try {
@@ -56,11 +80,18 @@ class QelloApi
         }
     }
 
+    /**
+     * @return HttpClient
+     */
     public function getHttpClient()
     {
         return $this->httpClient;
     }
 
+    /**
+     * Required data for the Registration call
+     * @return array
+     */
     public function getDeviceData()
     {
         return [
@@ -70,12 +101,20 @@ class QelloApi
         ];
     }
 
+    /**
+     * Constructs the HTTP url to call
+     * @param $path
+     * @return string
+     */
     public function getApiEndpoint($path)
     {
 
         return $this->apiEndpoint . '/' . $path;
     }
 
+    /**
+     * @return string
+     */
     public function getToken()
     {
         return $this->token;
